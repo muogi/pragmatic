@@ -6,5 +6,9 @@
             <h2 style="font-family: 'NanumSquareB';">{{ target_project.title }}</h2>
             <h5 style="margin-bottom: 3rem;">{{ target_project.description }}</h5>
         </div>
+
+        <div>
+            {% include 'snippets/list_fragment.html' with article_list=object_list %}
+        </div>
     </div>
 {% endblock content %}
