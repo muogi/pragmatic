@@ -10,7 +10,7 @@
                      style="height: 12rem; width: 12rem; border-radius: 20rem; margin-bottom: 2rem; object-fit: cover;">
                 <h2 style="font-family: 'NanumSquareB';">{{ target_user.profile.nickname }}
                     {% if target_user == user %}
-                        <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">edit</a>
+                        <a class="material-icons" href="{% url 'profileapp:update' pk=target_user.profile.pk %}">edit</a>
                     {% endif %}
                 </h2>
                 <h5 style="margin-bottom: 3rem;">{{ target_user.profile.message }}</h5>
@@ -23,8 +23,8 @@
             {%  endif %}
 
             {% if target_user == user %}
-                <a href="{% url 'accountapp:update' pk=user.pk %}"><p>Change Info</p></a>
-                <a href="{% url 'accountapp:delete' pk=user.pk %}"><p>Quit</p></a>
+                <a class="btn btn-success" href="{% url 'accountapp:update' pk=user.pk %}">개인정보수정</a>
+                <a class="btn btn-danger" href="{% url 'accountapp:delete' pk=user.pk %}">탈퇴</a>
             {% endif %}
         </div>
         <div>
